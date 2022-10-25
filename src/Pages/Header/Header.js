@@ -14,16 +14,16 @@ const Header = () => {
 		</Link>
 		<ul className="items-stretch hidden space-x-3 lg:flex">
 			<li className="flex">
-				<Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400">Home</Link>
+				<Link rel="noopener noreferrer" to="/" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400">Home</Link>
 			</li>
 			<li className="flex">
-				<Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Courses</Link>
+				<Link rel="noopener noreferrer" to="/courses" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Courses</Link>
 			</li>
 			<li className="flex">
-				<Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Blog</Link>
+				<Link rel="noopener noreferrer" to="/blog" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Blog</Link>
 			</li>
 			<li className="flex">
-				<Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">About</Link>
+				<Link rel="noopener noreferrer" to="/faq" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">FAQ's</Link>
 			</li>
 		</ul>
 		<div className="items-center flex-shrink-0 hidden lg:flex">
