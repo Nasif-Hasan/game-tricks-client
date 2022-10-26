@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
+import { FaGithub, FaGoogle } from "react-icons/fa";
 const Login = () => {
     return (
         <form>
@@ -25,12 +26,17 @@ const Login = () => {
                                 </div>
                                 <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
                             </div>
-                            <a href="#" class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
+                            <Link href="#" class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</Link>
+                        </div>
+                        <div className='flex text-3xl justify-center'>
+                        <FaGoogle></FaGoogle>
+                        <FaGithub className='ml-5'></FaGithub>
                         </div>
                         <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login to your account</button>
                         <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-                            Not registered? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
+                            Not registered? <Link to="/register" class="text-blue-700 hover:underline dark:text-blue-500">Register Now</Link>
                         </div>
+                        
                     </form>
                 </div>
 
