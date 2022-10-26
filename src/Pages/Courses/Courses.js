@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import CourseSidebar from './CourseSidebar';
 
 const Courses = () => {
     const [courses, setCourses] = useState([])
@@ -13,9 +14,10 @@ const Courses = () => {
     }, [])
 
     return (
-        <div>
-            <h2>All courses: {courses.length}</h2>
-            <div className='mx-auto grid lg:grid-cols-3 md:grid-cols-2 mb-10'>
+        <div className='grid grid-cols-2'>
+            <CourseSidebar></CourseSidebar>
+            {/* <h2>All courses: {courses.length}</h2> */}
+            <div className=' grid lg:grid-cols-3 md:grid-cols-2 mb-10'>
                 {
                     courses.map(course => <p
                         key={course.id}
