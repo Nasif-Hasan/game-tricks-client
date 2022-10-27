@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { FaDownload } from "react-icons/fa";
 
 const SingleCourse = () => {
-
+    const ref = React.createRef();
     const [courses, setCourses] = useState([])
-    
+
     useEffect(() => {
         fetch('http://localhost:5000/game-courses')
             .then(res => res.json())
@@ -18,7 +18,9 @@ const SingleCourse = () => {
                 <div>
                     <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-50">Aliquip definiebas ad est</h2>
                     <p className="max-w-3xl mx-auto mt-4 text-xl text-center dark:text-gray-400">Quando cetero his ne, eum admodum sapientem ut.</p>
-                    <Link className='text-2xl absolute top-40 right-10 h-16 w-16 ...'><FaDownload></FaDownload></Link>
+                    <Link className='text-2xl absolute top-40 right-10 h-16 w-16 ...'><FaDownload>
+                        
+                    </FaDownload></Link>
                 </div>
 
                 <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
@@ -70,9 +72,9 @@ const SingleCourse = () => {
                     <div aria-hidden="true" className="mt-10 lg:mt-0">
                         <img src={courses.image} alt="" className="mx-auto rounded-lg shadow-lg dark:bg-gray-500" />
                     </div>
-                    
+
                 </div>
-                
+
             </div>
         </section>
     );
