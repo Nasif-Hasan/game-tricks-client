@@ -14,13 +14,14 @@ const Courses = () => {
     }, [])
 
     return (
-        <div className='grid grid-cols-2'>
+        <div className='flex'>
             <CourseSidebar></CourseSidebar>
-            {/* <h2>All courses: {courses.length}</h2> */}
-            <div className=' grid lg:grid-cols-3 md:grid-cols-2 mb-10'>
+            
+            <div className='my-10 mx-auto gap-5 grid lg:grid-cols-3 md:grid-cols-2'>
                 {
                     courses.map(course => <p
                         key={course.id}
+                        course={course}
                     >
                         <div className="max-w-xs rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100 mb-10">
                             <img src={course.image} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
