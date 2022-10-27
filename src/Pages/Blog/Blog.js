@@ -6,7 +6,7 @@ const Blog = () => {
     const { toggle } = useContext(AuthContext);
     return (
         <div>
-            <section className={`${toggle ? "dark:bg-gray-700" : "dark:bg-gray-200 dark:text-gray-900"} p-4 dark:text-gray-100`}>
+            <section className={`${toggle ? "dark:bg-gray-700" : "dark:bg-gray-200 dark:text-gray-800"} p-4 dark:text-gray-100`}>
                 <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
                     <h2 className="text-2xl font-semibold sm:text-4xl">Our Game Tricks Blogs</h2>
                     

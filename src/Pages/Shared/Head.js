@@ -22,7 +22,7 @@ const Head = () => {
 				<Link rel="noopener noreferrer" to="/" aria-label="Back to homepage" className="flex items-center p-2">
 
 					<img className='h-20 pr-0' src={logo} alt="" />
-					<h2>Game Tricks</h2>
+					<h2 className='text-2xl'>Game Tricks</h2>
 				</Link>
 				<ul className="items-stretch hidden space-x-3 lg:flex">
 					<li className="flex">

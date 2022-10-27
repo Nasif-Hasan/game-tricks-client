@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaDownload } from "react-icons/fa";
 import Pdf from "react-to-pdf";
+import { HiCheckBadge, IconName } from "react-icons/hi2";
 
 const SingleCourse = () => {
     const ref = React.createRef();
@@ -15,12 +16,12 @@ const SingleCourse = () => {
 
     return (
 
-        <section className="dark:bg-gray-800 dark:text-gray-100">
+        <section className="dark:bg-gray-900 dark:text-gray-100">
 
             <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
                 <div>
-                    <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-50">Aliquip definiebas ad est</h2>
-                    <p className="max-w-3xl mx-auto mt-4 text-xl text-center dark:text-gray-400">Quando cetero his ne, eum admodum sapientem ut.</p>
+                    <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-50">Every Skill of This Game</h2>
+                    <p className="max-w-3xl mx-auto mt-4 text-xl text-center dark:text-gray-400">Check out our service of every game.</p>
                     <Pdf targetRef={ref} filename="code-example.pdf">
                         {({ toPdf }) => <button onClick={toPdf}><Link className='text-2xl absolute top-40 right-10 h-16 w-16 ...'><FaDownload></FaDownload></Link></button>}
                     </Pdf>
@@ -72,9 +73,18 @@ const SingleCourse = () => {
                                 </div>
                             </div>
                         </div>
+                        <Link to='/premium' className="flex mt-10 overflow-hidden rounded-lg dark:bg-gray-800 dark:text-gray-100">
+                            <div className="flex items-center justify-center px-4 dark:bg-yellow-400 dark:text-gray-800">
+                                <HiCheckBadge className="text-4xl" ></HiCheckBadge>
+                            </div>
+                            <div className="items-center justify-between p-3">
+                                <p className="text-2xl dark:text-yellow-400 font-semibold">Get Premium Subscribtion</p>
+                                
+                            </div>
+                        </Link>
                     </div>
                     <div aria-hidden="true" className="mt-10 lg:mt-0">
-                        <img src={courses.image} alt="" className="mx-auto rounded-lg shadow-lg dark:bg-gray-500" />
+                        <img src="https://www.kibrispdr.org/data/186/fotografi-keren-alone-58.jpg" alt="" className="mx-auto rounded-lg shadow-lg dark:bg-gray-500" />
                     </div>
 
                 </div>

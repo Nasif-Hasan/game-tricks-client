@@ -16,7 +16,7 @@ const Courses = () => {
     }, [])
 
     return (
-        <div className={`${toggle ? "dark:bg-gray-700" : "dark:bg-gray-200 dark:text-gray-900"} dark:text-gray-100 flex`}>
+        <div className={`${toggle ? "dark:bg-gray-700" : "dark:bg-gray-200 dark:text-gray-900"} dark:text-gray-100 lg:flex md:flex`}>
             <CourseSidebar></CourseSidebar>
             
             <div className='my-10 mx-auto gap-5 grid lg:grid-cols-3 md:grid-cols-2 '>
