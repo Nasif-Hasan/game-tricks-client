@@ -5,6 +5,7 @@ import logo from '../../assets/logo.png'
 import { FaUserCircle } from "react-icons/fa";
 import { HiOutlineLogout } from "react-icons/hi";
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import ReactTooltip from 'react-tooltip';
 
 const Head = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,7 +54,8 @@ const Head = () => {
 					{
 						user?.uid ?
 
-							<div className='flex'>
+							<div data-tip={user?.displayName} className='flex'>
+								<ReactTooltip />
 								<Link><button className=" self-center px-4 py-3 font-bold rounded dark:bg-violet-400 dark:text-gray-900 flex gap-x-2">
 									<div>
 										{user?.displayName}
