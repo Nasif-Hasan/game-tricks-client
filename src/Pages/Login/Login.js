@@ -1,12 +1,16 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 const Login = () => {
-
+const [error ,setError] = useState('')
     const { providerLogin } = useContext(AuthContext);
     const { signIn } = useContext(AuthContext)
+
+    const navigate = useNavigate()
+
     const googleProvider = new GoogleAuthProvider()
 
     const handleGoogleSignIn = () => {
@@ -24,13 +28,19 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+
         signIn(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                form.reset()
+                form.reset();
+                setError('')
+                navigate('/')
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                console.error(error)
+                setError(error.message)
+            })
     }
 
     return (
@@ -71,15 +81,18 @@ const Login = () => {
                             <div className="space-y-4">
                                 <div className="space-y-2">
                                     <label for="email" className="block text-sm">Email address</label>
-                                    <input type="email" name="email" id="email" placeholder="leroy@jenkins.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" required />
+                                    <input type="email" name="email" id="email" placeholder="" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" required />
                                 </div>
                                 <div className="space-y-2">
                                     <div className="flex justify-between">
                                         <label for="password" className="text-sm">Password</label>
 
                                     </div>
-                                    <input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" required />
+                                    <input type="password" name="password" id="password" placeholder="" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" required />
                                 </div>
+                                <p className='text-red-700'>
+                                    {error}
+                                </p>
                             </div>
                             <button type="button" className="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-400 dark:text-gray-900">Login</button>
                         </form>

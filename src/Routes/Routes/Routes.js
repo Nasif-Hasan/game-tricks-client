@@ -8,6 +8,7 @@ import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
 import SingleCourse from "../../Pages/SingleCourse/SingleCourse";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -33,15 +34,15 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/courses/:id',
-                element: <SingleCourse></SingleCourse>
+                element: <PrivateRoute><SingleCourse></SingleCourse></PrivateRoute>
             },
             {
                 path: '/blog',
-                element: <Blog></Blog>
+                element: <PrivateRoute><Blog></Blog></PrivateRoute>
             },
             {
                 path: '/faq',
-                element: <FAQs></FAQs>
+                element: <PrivateRoute><FAQs></FAQs></PrivateRoute>
             }
         ]
     }
