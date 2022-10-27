@@ -5,21 +5,36 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 const Login = () => {
 
-    const {providerLogin} = useContext(AuthContext);
-
+    const { providerLogin } = useContext(AuthContext);
+    const { signIn } = useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider()
 
     const handleGoogleSignIn = () => {
         providerLogin(googleProvider)
-        .then(res => {
-            const user = res.user;
-            console.log(user);
-        })
-        .catch(error => console.error(error))
+            .then(res => {
+                const user = res.user;
+                console.log(user);
+            })
+            .catch(error => console.error(error))
+    }
+
+    const handleSubmit = event => {
+        event.preventDefault()
+        const form = event.target
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                form.reset()
+            })
+            .catch(error => console.error(error))
     }
 
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <section className="dark:bg-gray-800 dark:text-gray-100">
 
                 <div class="p-4 mx-auto max-w-lg sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
@@ -56,14 +71,14 @@ const Login = () => {
                             <div className="space-y-4">
                                 <div className="space-y-2">
                                     <label for="email" className="block text-sm">Email address</label>
-                                    <input type="email" name="email" id="email" placeholder="leroy@jenkins.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                                    <input type="email" name="email" id="email" placeholder="leroy@jenkins.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" required />
                                 </div>
                                 <div className="space-y-2">
                                     <div className="flex justify-between">
                                         <label for="password" className="text-sm">Password</label>
-                                        <Link rel="noopener noreferrer" to="#" className="text-xs hover:underline dark:text-gray-400">Forgot password?</Link>
+
                                     </div>
-                                    <input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                                    <input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" required />
                                 </div>
                             </div>
                             <button type="button" className="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-400 dark:text-gray-900">Login</button>

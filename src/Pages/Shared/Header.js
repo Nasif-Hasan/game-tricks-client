@@ -3,11 +3,18 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png'
 import { FaUserCircle } from "react-icons/fa";
+import { HiOutlineLogout } from "react-icons/hi";
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
 
-	const { user } = useContext(AuthContext)
+	const { user, logOut } = useContext(AuthContext)
+
+	const handleLogOut = () => {
+		logOut()
+			.then(() => { })
+			.catch(error => console.error(error))
+	}
 
 	return (
 		<header className="p-4 dark:bg-gray-800 dark:text-gray-100">
@@ -47,26 +54,35 @@ const Header = () => {
 				</ul>
 				<div className="items-center flex-shrink-0 hidden lg:flex">
 
-{
-	!user ? 
-<Link to='/login'><button className="self-center px-8 py-3 rounded">Log in</button></Link>
-:
+					{
+						user?.uid ?
+							
+							<div className='flex'>
+								<Link><button className=" self-center px-4 py-3 font-bold rounded dark:bg-violet-400 dark:text-gray-900 flex gap-x-2">
+									<div>
+										{user?.displayName}
+									</div>
+									<div>
+										{user?.photoURL ?
+											<img className='rounded-2xl h-7'
+												src={user?.photoURL} />
 
+											: <FaUserCircle></FaUserCircle>
+										}
+									</div>
+								</button></Link>
+								<Link className='text-2xl'><button onClick={handleLogOut} className='pt-3 pl-3'><HiOutlineLogout></HiOutlineLogout></button></Link>
+							</div>
+							:
 
-					<Link><button className=" self-center px-4 py-3 font-bold rounded dark:bg-violet-400 dark:text-gray-900 flex gap-x-2">
-						<div>
-							{user?.displayName}
-						</div>
-						<div>
-							{user?.photoURL ?
-								<img className='rounded-2xl h-7'
-								src={user.photoURL}/>
-								
-								: <FaUserCircle></FaUserCircle>
-							}
-						</div>
-					</button></Link>
-							}
+							<div>
+								<Link to='/login'><button className="self-center px-3 py-3 rounded">Log in</button></Link>
+								/
+								<Link to='/register'><button className="self-center px-3 py-3 rounded">Register</button></Link>
+
+							</div>
+							
+					}
 				</div>
 
 			</div>
