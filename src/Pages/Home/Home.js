@@ -3,9 +3,6 @@ import React from 'react';
 const Home = () => {
     return (
         <div>
-
-
-
             <div className="relative flex flex-col-reverse py-16 lg:pt-0 lg:flex-col lg:pb-0">
                 <div className="inset-y-0 top-0 right-0 z-0 w-full max-w-xl px-4 mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0">
                     <svg
@@ -48,7 +45,7 @@ const Home = () => {
 
 
             <section className="p-4 lg:p-8 dark:bg-gray-800 dark:text-gray-100">
-                <div className="container mx-auto space-y-12">
+                <div className="container mt-5 mx-auto space-y-12">
                     <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
                         <img src="https://thebusinessofesports.com/wp-content/uploads/2021/06/gsmarena_001.jpg" alt="" className="h-80 dark:bg-gray-500 aspect-video" />
                         <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-900">

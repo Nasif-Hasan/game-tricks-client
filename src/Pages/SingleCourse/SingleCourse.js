@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaDownload } from "react-icons/fa";
+import Pdf from "react-to-pdf";
 
 const SingleCourse = () => {
     const ref = React.createRef();
@@ -13,13 +14,17 @@ const SingleCourse = () => {
     }, [])
 
     return (
+
         <section className="dark:bg-gray-800 dark:text-gray-100">
+
             <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
                 <div>
                     <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-50">Aliquip definiebas ad est</h2>
                     <p className="max-w-3xl mx-auto mt-4 text-xl text-center dark:text-gray-400">Quando cetero his ne, eum admodum sapientem ut.</p>
-                    <Link className='text-2xl absolute top-40 right-10 h-16 w-16 ...'><FaDownload>
-                        
+                    <Link className='text-2xl absolute top-40 right-10 h-16 w-16 ...'><FaDownload ref={ref}>
+                        <Pdf targetRef={ref} filename="code-example.pdf">
+                            {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
+                        </Pdf>
                     </FaDownload></Link>
                 </div>
 

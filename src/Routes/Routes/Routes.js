@@ -34,15 +34,16 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/courses/:id',
-                element: <PrivateRoute><SingleCourse></SingleCourse></PrivateRoute>
+                element: <SingleCourse></SingleCourse>,
+                loader: () => fetch(``)
             },
             {
                 path: '/blog',
-                element: <PrivateRoute><Blog></Blog></PrivateRoute>
+                element: <Blog></Blog>
             },
             {
                 path: '/faq',
-                element: <PrivateRoute><FAQs></FAQs></PrivateRoute>
+                element: <FAQs></FAQs>
             }
         ]
     }
