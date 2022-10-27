@@ -2,6 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png'
+import { FaUserCircle } from "react-icons/fa";
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
@@ -45,8 +46,27 @@ const Header = () => {
 
 				</ul>
 				<div className="items-center flex-shrink-0 hidden lg:flex">
-					<Link to='/login'><button className="self-center px-8 py-3 rounded">Log in</button></Link>
-					<Link to='register'><button className="self-center px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900">Register</button></Link>
+
+{
+	!user ? 
+<Link to='/login'><button className="self-center px-8 py-3 rounded">Log in</button></Link>
+:
+
+
+					<Link><button className=" self-center px-4 py-3 font-bold rounded dark:bg-violet-400 dark:text-gray-900 flex gap-x-2">
+						<div>
+							{user?.displayName}
+						</div>
+						<div>
+							{user?.photoURL ?
+								<img className='rounded-2xl h-7'
+								src={user.photoURL}/>
+								
+								: <FaUserCircle></FaUserCircle>
+							}
+						</div>
+					</button></Link>
+							}
 				</div>
 
 			</div>
