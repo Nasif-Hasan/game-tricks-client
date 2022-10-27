@@ -4,8 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
-const [error, setError] = useState('')
-    const {createUser, updateUserProfile} = useContext(AuthContext)
+    const [error, setError] = useState('')
+    const { createUser, updateUserProfile } = useContext(AuthContext)
 
     const navigate = useNavigate()
 
@@ -19,18 +19,18 @@ const [error, setError] = useState('')
         console.log(name, email, photoURL, password);
 
         createUser(email, password)
-        .then(res => {
-            const user = res.user;
-            console.log(user);
-            form.reset();
-            setError('')
-            navigate('/')
-            handleUpdateUserProfile(name, photoURL)
-        })
-        .catch(error => {
-            console.error(error)
-            setError(error.message)
-        })
+            .then(res => {
+                const user = res.user;
+                console.log(user);
+                form.reset();
+                setError('')
+                navigate('/')
+                handleUpdateUserProfile(name, photoURL)
+            })
+            .catch(error => {
+                console.error(error)
+                setError(error.message)
+            })
     }
 
     const handleUpdateUserProfile = (name, photoURL) => {
@@ -39,8 +39,8 @@ const [error, setError] = useState('')
             photoURL: photoURL
         }
         updateUserProfile(profile)
-        .then(() => { })
-        .catch(error => console.error(error))
+            .then(() => { })
+            .catch(error => console.error(error))
     }
 
     return (
@@ -65,7 +65,7 @@ const [error, setError] = useState('')
                                 <label for="name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-violet-600 peer-focus:dark:text-violet-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Your name</label>
                             </div>
                             <div class="relative z-0 mb-6 w-full group">
-                                <input type="text" name="photoURL" id="photoURL" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-violet-500 focus:outline-none focus:ring-0 focus:border-violet-600 peer" placeholder=" "/>
+                                <input type="text" name="photoURL" id="photoURL" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-violet-500 focus:outline-none focus:ring-0 focus:border-violet-600 peer" placeholder=" " />
                                 <label for="photo-URL" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-violet-600 peer-focus:dark:text-violet-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Photo URL</label>
                             </div>
                         </div>

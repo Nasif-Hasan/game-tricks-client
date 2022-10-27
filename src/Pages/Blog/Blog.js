@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Blog = () => {
+    const { toggle } = useContext(AuthContext);
     return (
         <div>
-            <section className="dark:bg-gray-800 dark:text-gray-100 ">
+            <section className={`${toggle ? "dark:bg-gray-700" : "dark:bg-gray-200 dark:text-gray-900"} p-4 dark:text-gray-100`}>
                 <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
                     <h2 className="text-2xl font-semibold sm:text-4xl">Our Game Tricks Blogs</h2>
                     
                 </div>
 
-                <section className="dark:bg-gray-800 dark:text-gray-100">
+                <section className={`${toggle ? "dark:bg-gray-700" : "dark:bg-gray-200"} p-4 dark:text-gray-100`}>
                     <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
                         <Link rel="noopener noreferrer" href="#" className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-900">
                             <img src="https://miro.medium.com/max/1400/0*heiz7awNkQ1B0O8e.png" alt="" className="object-cover w-full h-64 rounded sm:h-96 lg:col-span-7 dark:bg-gray-500" />

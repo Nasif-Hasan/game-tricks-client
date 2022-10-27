@@ -8,8 +8,8 @@ import Head from '../../Pages/Shared/Head';
 const Main = () => {
     return (
         <div>
-            <Header></Header>
-            {/* <Head></Head> */}
+            {/* <Header></Header> */}
+            <Head></Head>
             <Outlet></Outlet>
             <Footer></Footer>
         </div>

@@ -3,10 +3,11 @@ import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 const Login = () => {
     const [error, setError] = useState('')
-    const { providerLogin } = useContext(AuthContext);
+    const { providerLogin, toggle } = useContext(AuthContext);
     const { signIn } = useContext(AuthContext)
     const location = useLocation()
 
@@ -53,12 +54,17 @@ const Login = () => {
             .catch(error => {
                 console.error(error)
                 setError(error.message)
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: `${error}`
+                  })
             })
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            <section className="dark:bg-gray-800 dark:text-gray-100">
+            <section className={`${toggle ? "dark:bg-gray-800" : "dark:bg-gray-200 dark:text-gray-900"} p-4 dark:text-gray-100`}>
 
                 <div class="p-4 mx-auto max-w-lg sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
                     <div className="w-full max-w-md p-4 rounded-md shadow sm:p-8 dark:bg-gray-900 dark:text-gray-100">

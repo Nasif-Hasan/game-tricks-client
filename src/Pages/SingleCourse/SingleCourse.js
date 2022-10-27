@@ -21,14 +21,13 @@ const SingleCourse = () => {
                 <div>
                     <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-50">Aliquip definiebas ad est</h2>
                     <p className="max-w-3xl mx-auto mt-4 text-xl text-center dark:text-gray-400">Quando cetero his ne, eum admodum sapientem ut.</p>
-                    <Link className='text-2xl absolute top-40 right-10 h-16 w-16 ...'><FaDownload ref={ref}>
-                        <Pdf targetRef={ref} filename="code-example.pdf">
-                            {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
-                        </Pdf>
-                    </FaDownload></Link>
+                    <Pdf targetRef={ref} filename="code-example.pdf">
+                        {({ toPdf }) => <button onClick={toPdf}><Link className='text-2xl absolute top-40 right-10 h-16 w-16 ...'><FaDownload></FaDownload></Link></button>}
+                    </Pdf>
+
                 </div>
 
-                <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
+                <div ref={ref} className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
                     <div>
                         <h3 className="text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-50">Ad vix debet docendi</h3>
                         <p className="mt-3 text-lg dark:text-gray-400">Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione ut, persius eripuit quo id. Sit te euismod tacimates.</p>

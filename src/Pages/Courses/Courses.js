@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import CourseSidebar from './CourseSidebar';
 
 const Courses = () => {
+    const { toggle } = useContext(AuthContext);
     const [courses, setCourses] = useState([])
 
     useEffect(() => {
@@ -14,10 +16,10 @@ const Courses = () => {
     }, [])
 
     return (
-        <div className='flex'>
+        <div className={`${toggle ? "dark:bg-gray-700" : "dark:bg-gray-200 dark:text-gray-900"} dark:text-gray-100 flex`}>
             <CourseSidebar></CourseSidebar>
             
-            <div className='my-10 mx-auto gap-5 grid lg:grid-cols-3 md:grid-cols-2'>
+            <div className='my-10 mx-auto gap-5 grid lg:grid-cols-3 md:grid-cols-2 '>
                 {
                     courses.map(course => <p
                         key={course.id}
