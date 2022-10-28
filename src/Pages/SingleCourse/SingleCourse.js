@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaDownload } from "react-icons/fa";
 import Pdf from "react-to-pdf";
 import { HiCheckBadge, IconName } from "react-icons/hi2";
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const SingleCourse = () => {
     const ref = React.createRef();
     const [courses, setCourses] = useState([])
+    const { toggle } = useContext(AuthContext);
 
     useEffect(() => {
         fetch('http://localhost:5000/game-courses')
@@ -16,7 +18,7 @@ const SingleCourse = () => {
 
     return (
 
-        <section className="dark:bg-gray-900 dark:text-gray-100">
+        <section className={`${toggle ? "dark:bg-gray-900" : "dark:bg-gray-200 dark:text-gray-900"} p-4 dark:text-gray-100`}>
 
             <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
                 <div>

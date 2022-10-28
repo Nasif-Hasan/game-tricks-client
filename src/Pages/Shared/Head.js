@@ -65,7 +65,7 @@ const Head = () => {
 											<img className='rounded-2xl h-7'
 												src={user?.photoURL} />
 
-											: <FaUserCircle></FaUserCircle>
+											: <FaUserCircle className='text-2xl'></FaUserCircle>
 										}
 									</div>
 								</button></Link>

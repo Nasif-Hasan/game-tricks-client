@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCq_SsH7qArwu6ofNh1TXQ3Y9Ie9__xpgU",
-  authDomain: "game-tricks-e9d4d.firebaseapp.com",
-  projectId: "game-tricks-e9d4d",
-  storageBucket: "game-tricks-e9d4d.appspot.com",
-  messagingSenderId: "745577220420",
-  appId: "1:745577220420:web:2176380fb26fcef47c2f11"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId
 };
 
 // Initialize Firebase

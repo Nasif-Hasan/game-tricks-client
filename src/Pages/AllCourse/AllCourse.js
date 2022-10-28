@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const AllCourse = () => {
+    const { toggle } = useContext(AuthContext);
     return (
-        <section className="dark:bg-gray-800 dark:text-gray-100">
+        <section className={`${toggle ? "dark:bg-gray-800" : "dark:bg-gray-200 dark:text-gray-900"} p-4 dark:text-gray-100`}>
             <div className="container mx-auto p-4 py-6 space-y-2 text-center">
                 <h2 className="text-5xl font-bold">Our Services</h2>
                 <p className="dark:text-gray-400">We try to make your game easy.</p>
