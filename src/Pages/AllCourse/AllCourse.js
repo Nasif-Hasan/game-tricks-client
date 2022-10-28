@@ -3,6 +3,7 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const AllCourse = () => {
     const { toggle } = useContext(AuthContext);
+    
     return (
         <section className={`${toggle ? "dark:bg-gray-800" : "dark:bg-gray-200 dark:text-gray-900"} p-4 dark:text-gray-100`}>
             <div className="container mx-auto p-4 py-6 space-y-2 text-center">

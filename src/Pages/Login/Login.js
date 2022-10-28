@@ -29,11 +29,11 @@ const Login = () => {
 
     const handleGithubSignIn = () => {
         providerLogin(githubProvider)
-        .then(res => {
-            const user = res.user;
-            console.log(user);
-        })
-        .catch(error => console.error(error))
+            .then(res => {
+                const user = res.user;
+                console.log(user);
+            })
+            .catch(error => console.error(error))
     }
 
     const handleSubmit = event => {
@@ -49,7 +49,7 @@ const Login = () => {
                 console.log(user);
                 form.reset();
                 setError('')
-                navigate(from, {replace: true})
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.error(error)
@@ -58,7 +58,7 @@ const Login = () => {
                     icon: 'error',
                     title: 'Oops...',
                     text: `${error}`
-                  })
+                })
             })
     }
 

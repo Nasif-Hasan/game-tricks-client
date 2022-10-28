@@ -53,7 +53,6 @@ const Head = () => {
 
 					{
 						user?.uid ?
-
 							<div data-tip={user?.displayName} className='flex'>
 								<ReactTooltip />
 								<Link><button className=" self-center px-4 py-3 font-bold rounded dark:bg-violet-400 dark:text-gray-900 flex gap-x-2">
@@ -64,7 +63,6 @@ const Head = () => {
 										{user?.photoURL ?
 											<img className='rounded-2xl h-7'
 												src={user?.photoURL} />
-
 											: <FaUserCircle className='text-2xl'></FaUserCircle>
 										}
 									</div>
@@ -76,7 +74,6 @@ const Head = () => {
 								<Link to='/login'><button className="self-center px-3 py-3 rounded">Log in</button></Link>
 								/
 								<Link to='/register'><button className="self-center px-3 py-3 rounded">Register</button></Link>
-
 							</div>
 
 					}
@@ -142,7 +139,7 @@ const Head = () => {
 										<li className="flex">
 											<Link rel="noopener noreferrer" to="/faq" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">FAQ's</Link>
 										</li>
-										
+
 									</ul>
 								</nav>
 							</div>

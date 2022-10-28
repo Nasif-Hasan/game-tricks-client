@@ -58,7 +58,7 @@ const Home = () => {
                     <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row-reverse">
                         <img src="https://cdn-uploads.gameblog.fr/img/news/404279_62da8bb531cbc.jpg" alt="" className="h-80 dark:bg-gray-500 aspect-video" />
                         <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-900">
-                        <h3 className="text-3xl font-bold">Football Games (FIFA)</h3>
+                            <h3 className="text-3xl font-bold">Football Games (FIFA)</h3>
                             <p className="my-6 dark:text-gray-400">In May, EA Sports and FIFA announced their partnership spanning over 20 years will come to an end in the summer of 2023. After months of negotiations regarding an extension of their current partnership, the two sides were unable to come to an agreement on future terms.</p>
                             <button type="button" className="self-start">Action</button>
                         </div>
@@ -66,9 +66,9 @@ const Home = () => {
                     <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
                         <img src="https://assets.promediateknologi.com/crop/0x0:0x0/x/photo/2022/08/15/771180388.jpg" alt="" className="h-80 dark:bg-gray-500 aspect-video" />
                         <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-900">
-                        <h3 className="text-3xl font-bold">Game of Creativity</h3>
+                            <h3 className="text-3xl font-bold">Game of Creativity</h3>
                             <p className="my-6 dark:text-gray-400">What games increase creativity?
-Ivanov says these improve our creative-thinking abilities. These include word searches, look-and-find games, Sudoku, and so on. “They all usually require you to approach a problem from a new or unexpected angle, thereby using new areas of your brain and opening your thinking up to new possibilities</p>
+                                Ivanov says these improve our creative-thinking abilities. These include word searches, look-and-find games, Sudoku, and so on. “They all usually require you to approach a problem from a new or unexpected angle, thereby using new areas of your brain and opening your thinking up to new possibilities</p>
                             <button type="button" className="self-start">Action</button>
                         </div>
                     </div>

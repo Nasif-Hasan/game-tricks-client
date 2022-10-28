@@ -32,12 +32,15 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/courses',
-                element: <Courses></Courses>
+                element: <Courses></Courses>,
+                loader: () => fetch('http://localhost:5000/game-courses')
             },
             {
                 path: '/courses/:id',
                 element: <SingleCourse></SingleCourse>,
-                loader: () => fetch(``)
+                loader: ({ params }) => {
+                    return fetch(`http://localhost:5000/game-courses/${params.id}`)
+                }
             },
             {
                 path: '/blog',
@@ -49,7 +52,8 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/premium',
-                element: <PrivateRoute><Premium></Premium></PrivateRoute>
+                element: <PrivateRoute><Premium></Premium></PrivateRoute>,
+
             },
             {
                 path: '/allcourse',
